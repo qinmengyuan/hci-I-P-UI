@@ -1,15 +1,14 @@
-import { Home, Search, Settings, Activity, MapPin } from 'lucide-react';
+import { Home, Search, Settings, Activity, MapPin, Video } from 'lucide-react';
 
 interface NavigationProps {
-  activeTab: 'biosignal' | 'location';
-  onTabChange: (tab: 'biosignal' | 'location') => void;
+  activeTab: 'biosignal' | 'location' | 'behavior';
+  onTabChange: (tab: 'biosignal' | 'location' | 'behavior') => void;
 }
 
 export default function Navigation({ activeTab, onTabChange }: NavigationProps) {
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-slate-900/90 backdrop-blur-lg border-t border-slate-800 px-6 py-4">
       <div className="max-w-screen-xl mx-auto flex justify-around items-center">
-        <NavItem icon={<Home className="w-6 h-6" />} label="Home" active={false} onClick={() => {}} />
         <NavItem
           icon={<Activity className="w-6 h-6" />}
           label="Bio-signal"
@@ -22,7 +21,18 @@ export default function Navigation({ activeTab, onTabChange }: NavigationProps) 
           active={activeTab === 'location'}
           onClick={() => onTabChange('location')}
         />
-        <NavItem icon={<Settings className="w-6 h-6" />} label="Settings" active={false} onClick={() => {}} />
+        <NavItem
+          icon={<Video className="w-6 h-6" />}
+          label="Behavior"
+          active={activeTab === 'behavior'}
+          onClick={() => onTabChange('behavior')}
+        />
+        <NavItem 
+          icon={<Settings className="w-6 h-6" />} 
+          label="Settings" 
+          active={false} 
+          onClick={() => {}} 
+        />
       </div>
     </nav>
   );

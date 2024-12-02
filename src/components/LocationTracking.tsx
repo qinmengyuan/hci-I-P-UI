@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import gps from '../../gps.png';
+
 export default function LocationTracking() {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -30,8 +31,14 @@ export default function LocationTracking() {
           />
         </div>
 
-        <div className="bg-slate-800/50 rounded-xl h-64 flex items-center justify-center mb-6">
-          <img src={gps} alt="Map Placeholder" />
+        <div className="relative bg-slate-800/50 rounded-xl overflow-hidden mb-6">
+          <div className="aspect-[4/3] w-full">
+            <img 
+              src={gps} 
+              alt="Map View" 
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-3 gap-3 mb-4">
