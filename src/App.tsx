@@ -6,10 +6,11 @@ import HeartRateMonitor from './components/HeartRateMonitor';
 import EmergencyAlert from './components/EmergencyAlert';
 import LocationTracking from './components/LocationTracking';
 import BehaviorMonitoring from './components/BehaviorMonitoring';
+import DigitalCompanion from './components/DigitalCompanion';
 import Navigation from './components/Navigation';
 
 function App() {
-  const [activeTab, setActiveTab] = useState<'biosignal' | 'location' | 'behavior'>('biosignal');
+  const [activeTab, setActiveTab] = useState<'biosignal' | 'location' | 'behavior' | 'companion'>('biosignal');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white pb-24">
@@ -26,8 +27,10 @@ function App() {
           </>
         ) : activeTab === 'location' ? (
           <LocationTracking />
-        ) : (
+        ) : activeTab === 'behavior' ? (
           <BehaviorMonitoring />
+        ) : (
+          <DigitalCompanion />
         )}
       </div>
       <Navigation activeTab={activeTab} onTabChange={setActiveTab} />

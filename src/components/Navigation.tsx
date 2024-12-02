@@ -1,8 +1,8 @@
-import { Home, Search, Settings, Activity, MapPin, Video } from 'lucide-react';
+import { Home, Search, Settings, Activity, MapPin, Video, UserCircle } from 'lucide-react';
 
 interface NavigationProps {
-  activeTab: 'biosignal' | 'location' | 'behavior';
-  onTabChange: (tab: 'biosignal' | 'location' | 'behavior') => void;
+  activeTab: 'biosignal' | 'location' | 'behavior' | 'companion';
+  onTabChange: (tab: 'biosignal' | 'location' | 'behavior' | 'companion') => void;
 }
 
 export default function Navigation({ activeTab, onTabChange }: NavigationProps) {
@@ -26,6 +26,12 @@ export default function Navigation({ activeTab, onTabChange }: NavigationProps) 
           label="Behavior"
           active={activeTab === 'behavior'}
           onClick={() => onTabChange('behavior')}
+        />
+        <NavItem
+          icon={<UserCircle className="w-6 h-6" />}
+          label="Companion"
+          active={activeTab === 'companion'}
+          onClick={() => onTabChange('companion')}
         />
         <NavItem 
           icon={<Settings className="w-6 h-6" />} 
