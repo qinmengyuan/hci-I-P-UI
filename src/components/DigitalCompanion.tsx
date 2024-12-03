@@ -1,11 +1,19 @@
 import { useState } from 'react';
-import { UserCircle, MessageCircle, Heart, Calendar, Clock } from 'lucide-react';
+import {
+  UserCircle,
+  MessageCircle,
+  Heart,
+  Calendar,
+  Clock,
+} from 'lucide-react';
 import CompanionChat from './companion/CompanionChat';
 import CompanionSchedule from './companion/CompanionSchedule';
 import CompanionMemories from './companion/CompanionMemories';
 
 export default function DigitalCompanion() {
-  const [activeView, setActiveView] = useState<'chat' | 'schedule' | 'memories'>('chat');
+  const [activeView, setActiveView] = useState<
+    'chat' | 'schedule' | 'memories'
+  >('chat');
 
   return (
     <div className="space-y-6">
@@ -13,7 +21,7 @@ export default function DigitalCompanion() {
         <div className="flex items-center gap-4 mb-6">
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&q=80&w=200&h=200"
+              src="196973d818e74ef7b8373ce7651b751e.png"
               alt="Digital Companion"
               className="w-20 h-20 rounded-full object-cover border-2 border-purple-400"
             />

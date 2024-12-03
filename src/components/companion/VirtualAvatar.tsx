@@ -9,7 +9,7 @@ export default function VirtualAvatar() {
     <div className="relative bg-slate-800/50 rounded-xl overflow-hidden mb-6">
       <div className={`aspect-video w-full ${isFullScreen ? 'fixed inset-0 z-50' : ''}`}>
         <img
-          src="https://i-1.7k8k.com/2023/1027/196973d818e74ef7b8373ce7651b751e.png"
+          src="196973d818e74ef7b8373ce7651b751e.png"
           alt="Virtual Avatar"
           className="w-full h-full object-contain bg-gradient-to-b from-slate-900 to-slate-800"
         />

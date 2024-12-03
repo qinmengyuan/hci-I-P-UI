@@ -10,7 +10,7 @@ export default function CameraFeed({ selectedCamera }: CameraFeedProps) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsDetecting(prev => !prev);
+      setIsDetecting((prev) => !prev);
     }, 3000);
 
     return () => clearInterval(interval);
@@ -18,13 +18,13 @@ export default function CameraFeed({ selectedCamera }: CameraFeedProps) {
 
   return (
     <div className="relative aspect-video mb-6 rounded-xl overflow-hidden bg-slate-800">
-      <img 
-        src="https://www.jvmvision.com/img/app_7.jpg" 
-        alt="Camera Feed" 
+      <img
+        src="app_7.jpg"
+        alt="Camera Feed"
         className="w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-      
+
       <div className="absolute top-4 left-4 px-3 py-1.5 bg-slate-900/80 text-white rounded-lg text-sm backdrop-blur-sm border border-slate-700/50">
         {selectedCamera}
       </div>
@@ -35,7 +35,7 @@ export default function CameraFeed({ selectedCamera }: CameraFeedProps) {
           Fall Detection in Progress
         </div>
       )}
-      
+
       <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
         <div className="px-3 py-1.5 bg-slate-900/80 text-slate-300 rounded-lg text-sm backdrop-blur-sm border border-slate-700/50">
           {new Date().toLocaleTimeString()}
